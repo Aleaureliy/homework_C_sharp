@@ -4,14 +4,12 @@
 // 14 -> нет
 // 46 -> нет
 // 161 -> да
-
-internal class Program
+Console.WriteLine("Введите число: ");
+int number = int.Parse(Console.ReadLine());
+main(number);
+void main(int num)
 {
-    private static void Main(string[] args)
-    {
-        Console.WriteLine("Введите число: ");
-        int Number = int.Parse(Console.ReadLine());
-        
-        
-    }
+    if (num % 7 == 0 && num % 23 == 0)
+        Console.WriteLine("да");
+    else Console.WriteLine("нет");
 }

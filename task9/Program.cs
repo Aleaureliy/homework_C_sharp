@@ -5,23 +5,21 @@
 // 1, то программа выводит остаток от деления.
 // 34, 5 -> не кратно, остаток 4
 // 16, 4 -> кратно
-
-internal class Program
+Console.WriteLine("Введите первое число: ");
+int number1 = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите второе число: ");
+int number2 = int.Parse(Console.ReadLine()!);
+Equal(number1, number2);
+void Equal(int num1, int num2)
 {
-    private static void Main(string[] args)
+
+    if (num1 % num2 == 0)
     {
-            Console.WriteLine("Введите первое число: ");
-            int num1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите второе число: ");
-            int num2 = int.Parse(Console.ReadLine());
-            if (num1 % num2 == 0)
-            {
-                Console.WriteLine("Второе число кратно первому");
-            }
-            else
-            {
-                int sep = num1 % num2;
-                Console.WriteLine("Второе число не кратно первому, остаток: " + sep);
-            }
+        Console.WriteLine("Второе число кратно первому");
+    }
+    else
+    {
+        int sep = num1 % num2;
+        Console.WriteLine("Второе число не кратно первому, остаток: " + sep);
     }
 }
