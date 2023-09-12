@@ -4,17 +4,39 @@
 // 78 -> 2
 // 89126 -> 5
 
-string Promt(string message)
+// string Promt(string message)
+// {
+//     Console.Write(message);
+//     string number = Console.ReadLine();
+//     return number;
+// }
+// int Counter(string number)
+// {
+//     int length = number.Length;
+//     return length;
+// }
+
+// string num = Promt("Введите число: ");
+// Console.WriteLine(Counter(num));
+
+int Promt(string message)
 {
     Console.Write(message);
-    string number = Console.ReadLine();
+    int number = int.Parse(Console.ReadLine());
     return number;
 }
-int Counter(string number)
+int Numbers(int number)
 {
-    int length = number.Length;
-    return length;
+    int count = 0;
+    int num = Math.Abs(number); // Убираем значение для отрицательного числа
+    if(num ==0) return 1;
+    while(num > 0)
+    {
+        count ++;
+        num /= 10;
+    }
+    return count;
 }
 
-string num = Promt("Введите число: ");
-Console.WriteLine(Counter(num));
+int num = Promt("Введите число: ");
+Console.WriteLine(Numbers(num));

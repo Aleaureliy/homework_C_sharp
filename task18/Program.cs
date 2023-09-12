@@ -11,15 +11,15 @@ int Promt(string message)
     return number;
 }
 
-int Multiplication(int number)
+int Factorial(int number)
 {
-    int sum = 1;
+    int res = 1;
     for(int i = 1; i <= number; i++)
     {   
-        sum *= i;
+        res *=i;
     }
-    return sum;
+    return res;
 }
 
 int num = Promt("Введите число: ");
-Console.WriteLine(Multiplication(num));
+Console.WriteLine(Factorial(num));

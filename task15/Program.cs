@@ -10,14 +10,34 @@ int Promt(string message)
     int number = int.Parse(Console.ReadLine());
     return number;
 }
-void FindQuarter(int number)
+
+int[] Square(int number)
 {
-    int index = 1;
-    while(index <= number)
+    int[] array = new int[number];
+    for(int i = 0; i < number; i++)
     {
-        Console.WriteLine(index * index);
-        index++;
+        array[i] = (i + 1) * (i + 1);
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + ", ");
     }
 }
+// void FindQuarter(int number)
+// {
+//     int index = 1;
+//     while(index <= number)
+//     {
+//         Console.WriteLine(index * index);
+//         index++;
+//     }
+// }
 int num = Promt("Введите число: ");
-FindQuarter(num);
+int[] arr = Square(num);
+PrintArray(arr);
+// FindQuarter(num);
