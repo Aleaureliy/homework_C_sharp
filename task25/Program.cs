@@ -10,7 +10,7 @@ int[] multiplication(int[] array)
     int[] newArray = new int[size];
     for(int i = 0; i < newArray.Length; i++)
     {
-        if(array.Length % 2 == 1 && i == newArray.Length - 1) newArray[i] = array[i];
+        if(array.Length % 2 == 1 && i == newArray.Length - 1) newArray[i] = array[i]; // Для последнего эллемента
         else newArray[i] = array[i] * array[array.Length - i -1];
     }
     return newArray;

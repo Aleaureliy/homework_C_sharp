@@ -11,24 +11,33 @@ int[] GetArray(int length, int min, int max)
     return result;
 }
 
-bool FindNum(int number, int[] collection)
+bool FindNum(int number, int[] array)
 {
-    bool res = false;
-    for(int i = 0; i < collection.Length; i++)
+    bool result = false;
+    for(int i = 0; i < array.Length; i++)
     {
-        if(collection[i] == number) return true;
+        if(array[i] == number) return true;
     }
+    return result;
 }
 
-int WorkWithUser(string msg)
+int WorkWithUser(string message)
 {
-    Console.WriteLine(msg);
+    Console.WriteLine(message);
     int num = int.Parse(Console.ReadLine());
     return num;
+}
+
+void PrintArray(int[] array)
+{
+    Console.WriteLine(string.Join(", ", array));
 }
 
 int size = WorkWithUser("Размер массива: ");
 int min = WorkWithUser("Минимальное значение: ");
 int max = WorkWithUser("Максимальное значение: ");
+int number = WorkWithUser("Максимальное число для поиска: ");
 int[] array = GetArray(size, min, max);
-if (FindNum(num, array))
+if (FindNum(number, array)) Console.WriteLine("да");
+else Console.WriteLine("нет");
+PrintArray(array);

@@ -14,7 +14,7 @@ int[] GetArray(int length, int min, int max)
 
 void PrintArray(int[] arr)
 {
-    Console.WriteLine(string.Join(" ", arr));
+    Console.WriteLine(string.Join(", ", arr));
 }
 
 int WorkWithUser(string msg)

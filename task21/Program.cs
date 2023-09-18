@@ -7,28 +7,62 @@ int[] GetArray(int length, int min, int max)
 {
     int[] result = new int[length];
     for (int i = 0; i < result.Length; i++)
-    {
-        result[i] = new Random().Next(min, max + 1);
+    {   
+        Random rand = new Random();
+        result[i] = rand.Next(min, max + 1);
     }
     return result;
 }
 
+// void PrintArray(int[] arr)
+// {
+//     Console.WriteLine(string.Join(" ", arr));
+// }
+
 void PrintArray(int[] arr)
-{
-    Console.WriteLine(string.Join(" ", arr));
+{   
+    for(int i = 0; i < arr.Length; i++)
+    {
+    Console.Write(arr[i] + " ");
+    }
 }
 
-int size = 12;
-int minValue = -9;
-int maxValue = 9;
+int WorkWithUser(string message)
+{
+    Console.WriteLine(message);
+    int number = int.Parse(Console.ReadLine());
+    return number;
+}
+
+// void GetSum(int [] array)
+// {
+// int positiveSum = 0;
+// int negativeSum = 0;
+// foreach (int el in array)
+// {
+//     if (el > 0) positiveSum += el;
+//     else negativeSum += el;
+// }
+// Console.WriteLine($"Сумма положительных чисел: {positiveSum}, сумма отрицательных: {negativeSum}");
+// }
+
+int[] GetSum(int[] array)
+{
+    int[] result = new int[2];
+    foreach(int el in array)
+    {
+        if(el > 0) result[0] += el;
+        else result[1] += el;
+    }
+    return result;
+}
+
+int size = WorkWithUser("Введите размер массива");
+int minValue = WorkWithUser("Введите минимальное значение массива");
+int maxValue = WorkWithUser("Введите максимальное значение массива");
 int[] array = GetArray(size, minValue, maxValue);
 PrintArray(array);
-
-int positiveSum = 0;
-int negativeSum = 0;
-foreach (int el in array)
-{
-    if (el > 0) positiveSum += el;
-    else negativeSum += el;
-}
-Console.WriteLine($"{positiveSum}, {negativeSum}");
+Console.WriteLine();
+// GetSum(array);
+int[] result = GetSum(array);
+Console.WriteLine($"Сумма положительных чисел: {result[0]}, сумма отрицательных: {result[1]}");
