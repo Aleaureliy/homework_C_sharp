@@ -15,9 +15,9 @@ int[] GetArray(int size, int minValue, int maxValue)
     return result;
 }
 
-void ReverseArray1(int[] array) //Первый способ (без создания нового массива)
+void ReverseArray1(int[] array) //Первый способ (без создания нового массива и меньше итераций)
 {
-    for(int i = 0; i < array.Length / 2; i++)
+    for (int i = 0; i < array.Length / 2; i++)
     {
         int temp = array[i];
         array[i] = array[array.Length - 1 - i];
@@ -25,10 +25,10 @@ void ReverseArray1(int[] array) //Первый способ (без создан
     }
 }
 
-int[] ReverseArray2(int[] array) //Второй способ (с созданием второго массива)
+int[] ReverseArray2(int[] array) //Второй способ (с созданием второго массива менее оптимизированный)
 {
     int[] result = new int[array.Length];
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         result[i] = array[array.Length - 1 - i];
     }
@@ -46,3 +46,41 @@ Console.WriteLine(string.Join(", ", reverseArray));
 // int min = WorkWithUser("Минимальное значение: ");
 // int max = WorkWithUser("Максимальное значение: ");
 //int[] array = GetArray(size, min, max);
+
+// double[] GetArray(int size)
+// {
+//     double[] result = new double[size];
+//     Random rand = new Random();
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = Math.Round(rand.NextDouble() * 10 - 5, 2);
+//     }
+//     return result;
+// }
+
+// void ReverseArray1(double[] arr)
+// {
+//     for (int i = 0; i < arr.Length / 2; i++)
+//     {
+//         double temp = arr[i];
+//         arr[i] = arr[arr.Length - 1 - i];
+//         arr[arr.Length - 1 - i] = temp;
+//     }
+// }
+
+// double[] ReverseArray2(double[] arr)
+// {
+//     double[] newArray = new double[arr.Length];
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         newArray[i] = arr[arr.Length - 1 - i];
+//     }
+//     return newArray;
+// }
+
+// double[] array = GetArray(5);
+// Console.WriteLine(string.Join(", ", array));
+// ReverseArray1(array);
+// Console.WriteLine(string.Join(", ", array));
+// double[] reverseArray = ReverseArray2(array);
+// Console.WriteLine(string.Join(", ", reverseArray));

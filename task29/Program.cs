@@ -24,5 +24,21 @@ void Fibonacci(int number)
     }
 }
 
+int[] Fibonacci1(int number)
+{
+    int[] result = new int[number];
+    result[0] = 0;
+    result[1] = 1;
+    for(int i = 2; i < result.Length; i++)
+    {
+        result[i] = result[i - 1] + result[i - 2];
+
+    }
+    return result;
+}
+
 int number = Promt("Введите число элементов: ");
 Fibonacci(number);
+Console.WriteLine();
+int [] result = Fibonacci1(number);
+Console.WriteLine(string.Join(" ", result));

@@ -7,7 +7,7 @@
 int Promt(string message)
 {
     Console.WriteLine(message);
-    int number = int.Parse(Console.ReadLine());
+    int number = int.Parse(Console.ReadLine()!);
     return number;
 }
 
@@ -22,5 +22,21 @@ string Binary(int number)
     return result;
 }
 
+int BinaryInt(int number)
+{
+    int binary = 0;
+    int count = 1;
+    while(number >= 1)
+    {
+        binary = binary + number % 2 * count;
+        count *= 10;
+        number /= 2;
+    }
+    return binary;
+}
+
 int number = Promt("Введите число: ");
 Console.WriteLine(Binary(number));
+Console.WriteLine(BinaryInt(number));
+//string str = Convert.ToString(number, 2);
+Console.WriteLine(Convert.ToString(number, 2));
