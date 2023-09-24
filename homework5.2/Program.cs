@@ -22,14 +22,14 @@ int WorkWithUser(string message)
 
 int Sum(int[] array)
 {
-    int count = 0;
+    int sum = 0;
     int i = 0;
     foreach(int el in array)
     {
-        if(array[i] % 2 == 0) count++;
+        if(i % 2 == 1) sum += array[i];
         i++;
     }
-    return count;
+    return sum;
 }
 
 void PrintArray(int[] array)

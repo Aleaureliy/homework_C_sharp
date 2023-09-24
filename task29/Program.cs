@@ -4,7 +4,7 @@
 int Promt(string message)
 {
     Console.WriteLine(message);
-    int number = int.Parse(Console.ReadLine());
+    int number = int.Parse(Console.ReadLine()!);
     return number;
 }
 
@@ -15,8 +15,7 @@ void Fibonacci(int number)
     Console.Write(first + " ");
     Console.Write(second + " ");
     for(int i = 2; i < number ; i++)
-    {
-        
+    { 
         int temp = second + first;
         Console.Write(temp + " ");
         first = second;
@@ -32,7 +31,6 @@ int[] Fibonacci1(int number)
     for(int i = 2; i < result.Length; i++)
     {
         result[i] = result[i - 1] + result[i - 2];
-
     }
     return result;
 }
