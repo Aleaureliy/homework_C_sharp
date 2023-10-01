@@ -49,14 +49,23 @@ int[] SumRows(int[,] matrix)
 int MinValueInArray(int[] array)
 {
     int min = array[0];
-    foreach (int i in array)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (i < min)
+        if (array[i] < min)
         {
-            min = i;
+            min = array[i];
         }
     }
     return min;
+}
+
+int IndexOf(int[] array, int value)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == value) return i;
+    }
+    return -1;
 }
 
 int[,] matrix = GetArray(3, 4, 1, 10);
@@ -67,3 +76,5 @@ Console.WriteLine("\nСумма строк массива:");
 Console.WriteLine(String.Join(" ", array));
 Console.WriteLine("\nМинимальное значение:");
 Console.WriteLine(MinValueInArray(array));
+Console.WriteLine("\nСтрока с наименьшей суммой элементов:");
+Console.WriteLine(IndexOf(array, MinValueInArray(array)) + " строка.");
