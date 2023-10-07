@@ -9,7 +9,7 @@ int Promt(string message)
     return number;
 }
 
-double AckermannFunction(double m, double n)
+int AckermannFunction(int m, int n)
 {
     if (m == 0)
         return n + 1;
