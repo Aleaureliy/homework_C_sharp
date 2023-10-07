@@ -9,7 +9,6 @@ int Promt(string message)
     return number;
 }
 
-
 double AckermannFunction(double m, double n)
 {
     if (m == 0)
@@ -21,8 +20,6 @@ double AckermannFunction(double m, double n)
         return AckermannFunction(m - 1, AckermannFunction(m, n - 1));
 }
 
-
 int m = Promt("Введите первое число: ");
 int n = Promt("Введите второе число: ");
-
 Console.WriteLine(AckermannFunction(m, n));
